@@ -128,10 +128,3 @@ $ rm -rf ~/.vagrant.d         # You'll need to re-install the plugins listed abo
 $ rm -rf ~/Library/VirtualBox
 $ rm -rf ~/VirtualBox\ VMs
 ```
-
-## Todo
-
-- https://docs.chef.io/environments.html
-  - https://github.com/mitchellh/vagrant/issues/1899
-- http://code.tutsplus.com/tutorials/setting-up-a-local-mirror-for-composer-packages-with-satis--net-36726
-- recipe for getting a zipfile from honey-b and extracing into stock
