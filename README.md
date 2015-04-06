@@ -134,3 +134,4 @@ $ rm -rf ~/VirtualBox\ VMs
 - https://docs.chef.io/environments.html
   - https://github.com/mitchellh/vagrant/issues/1899
 - http://code.tutsplus.com/tutorials/setting-up-a-local-mirror-for-composer-packages-with-satis--net-36726
+- recipe for getting a zipfile from honey-b and extracing into stock
