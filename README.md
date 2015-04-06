@@ -15,7 +15,7 @@ Vagrant can deploy to a multitude of [providers](https://docs.vagrantup.com/v2/p
 
 ```
 $ brew install caskroom/cask/brew-cask
-$ brew install vagrant virtualbox chefdk
+$ brew cask install vagrant virtualbox chefdk
 ```
 
 ##### Cask
