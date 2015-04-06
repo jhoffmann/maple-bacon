@@ -122,7 +122,7 @@ You will either need to `vagrant provision` or `vagrant destroy;vagrant up` your
 If you need to wipe out everything and start over, here's a list of places to start.
 ```
 $ vagrant destroy --force
-$ rm -rf bacon/.vagrant
+$ rm -rf .vagrant
 $ rm -rf ~/.berkshelf
 $ rm -rf ~/.vagrant.d         # You'll need to re-install the plugins listed above
 $ rm -rf ~/Library/VirtualBox
