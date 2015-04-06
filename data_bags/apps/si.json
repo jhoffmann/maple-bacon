@@ -1,0 +1,10 @@
+{
+  "id": "si",
+  "repo": "git@github.com:sugarcrm/sugarinternal.git",
+  "branch": "master",
+  "packages": [
+    "memcached",
+    "libmemcached10",
+    "libmemcached10-devel"
+  ]
+}

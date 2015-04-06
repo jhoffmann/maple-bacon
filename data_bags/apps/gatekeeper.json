@@ -1,0 +1,7 @@
+{
+  "id": "gatekeeper",
+  "repo": "git@github.com:sugarcrm/gatekeeper.git",
+  "branch": "master",
+  "packages": [
+  ]
+}

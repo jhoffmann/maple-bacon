@@ -1,0 +1,36 @@
+<?php
+#
+# This file is managed by Chef, please do not make local customizations
+#
+$sugar_config_si = array (
+   'setup_db_drop_tables' => true,
+   'setup_db_create_database' => true,
+   'setup_db_create_sugarsales_user' => false,
+   'setup_license_key_users' => 1,
+   'setup_license_key_expire_date' => '2030-12-12',
+   'setup_license_key_oc_licences' => 0,
+   'dbUSRData' => 'same',
+   'setup_db_type' => 'mysql',
+   'setup_system_name' => 'sugar',
+   'default_currency_iso4217' => 'USD',
+   'default_currency_name' => 'US Dollars',
+   'default_currency_significant_digits' => '2',
+   'default_date_format' => 'm/d/Y',
+   'default_time_format' => 'h:ia',
+   'default_decimal_seperator' => '.',
+   'default_export_charset' => 'UTF-8',
+   'default_language' => 'en_us',
+   'default_locale_name_format' => 's f l',
+   'default_number_grouping_seperator' => ',',
+   'export_delimiter' => ',',
+   'demoData' => 'no',
+   'setup_site_sugarbeet_anonymous_stats' => '1',
+   'setup_site_sugarbeet_automatic_checks' => '1',
+   'setup_site_specify_guid' => '0',
+   'setup_site_guid' => 'auto',
+
+    // From chef
+   <% @directives.sort_by { |key, val| key }.each do |directive, value| -%>
+   <%= "'#{directive}' => '#{value}'," %>
+   <% end -%>
+);

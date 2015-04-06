@@ -1,0 +1,7 @@
+{
+  "id": "partners",
+  "repo": "git@github.com:sugarcrm/partners.sugarcrm.com.git",
+  "branch": "master",
+  "packages": [
+  ]
+}
