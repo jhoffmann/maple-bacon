@@ -21,4 +21,4 @@ depends 'apache2'
 depends 'git'
 depends 'ssh_known_hosts'
 depends 'php'
-
+depends 'phpunit', '~> 1.0.2'
