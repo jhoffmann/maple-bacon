@@ -4,6 +4,9 @@
 
 <VirtualHost *:80>
    ServerName <%= @params[:server_name] %>
+   <% if @params[:server_aliases] -%>
+   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}.vm" }.join(" ") %>
+   <% end -%>
    DocumentRoot <%= @params[:docroot] %>
 
    <Directory <%= @params[:docroot] %>>
@@ -29,6 +32,9 @@
 <IfModule mod_ssl.c>
 <VirtualHost _default_:443>
    ServerName <%= @params[:server_name] %>
+   <% if @params[:server_aliases] -%>
+   ServerAlias <%= @params[:server_aliases].map! { |k| "#{k}.#{node['app']['name']}.vm" }.join(" ") %>
+   <% end -%>
    DocumentRoot <%= @params[:docroot] %>
 
    <Directory <%= @params[:docroot] %>>

@@ -1,5 +1,8 @@
 {
   "id": "stock",
+  "docroot": "",
+  "server_aliases": [
+  ],
   "packages": [
     "php54",
     "php54-cli",

@@ -1,7 +1,14 @@
 {
   "id": "gatekeeper",
   "repo": "git@github.com:sugarcrm/gatekeeper.git",
+  "docroot": "public/",
   "branch": "master",
+  "server_aliases": [
+    "store",
+    "partners"
+  ],
   "packages": [
+    "php54-mcrypt",
+    "php54-process"
   ]
 }

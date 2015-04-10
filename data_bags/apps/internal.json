@@ -2,6 +2,9 @@
   "id": "internal",
   "repo": "git@github.com:sugarcrm/idk.git",
   "branch": "master",
+  "docroot": "public/",
+  "server_aliases": [
+  ],
   "packages": [
   ]
 }

@@ -1,5 +1,6 @@
 include_recipe 'git'
 include_recipe 'root_ssh_agent::ppid'
+include_recipe 'root_ssh_agent::env_keep'
 
 apps = []
 begin

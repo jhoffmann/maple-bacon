@@ -6,5 +6,5 @@ include_recipe 'elasticsearch::plugins'
 # while our php54 packages (specifically php54-pecl-memcached) require libmemcached10
 service 'memcached' do
   supports :status => true, :restart => true, :reload => true
-  action [:enable, :start]
+  action [:enable]
 end

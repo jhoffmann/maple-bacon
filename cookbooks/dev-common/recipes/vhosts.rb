@@ -15,7 +15,8 @@ apps.each do |name|
     web_app app['id'] do
       server_name "#{app['id']}.#{node['app']['name']}.vm"
       allow_override 'all'
-      docroot "#{node['apache']['docroot_dir']}/#{app['id']}/"
+      docroot "#{node['apache']['docroot_dir']}/#{app['id']}/#{app['docroot']}"
+      server_aliases app['server_aliases']
       notifies :restart, resources("service[apache2]"), :delayed
     end
   end

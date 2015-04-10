@@ -5,7 +5,20 @@ This guide assumes you know how to install unix programs and configure things li
 
 ### First steps on the sauce
 
-Install [Homebrew](http://brew.sh).  It's going to require things like XCode from the Apple Store, I'm not going to repeat the instructions here, but get it running.
+Install [Homebrew](http://brew.sh).  It's going to require things like XCode from the Apple Store, I'm not going to repeat the instructions here, but get it running.  You'll also need the following services available on the host, since they're too slow to run inside the VM:
+
+```
+brew install elasticsearch
+brew install mysql
+```
+
+You should also get started with the scrubbed datadumps for SugarInternal and Gatekeeper:
+
+```
+mysqladmin create si7 create gatekeeper
+curl maple/db/tiny | bzcat | mysql si7
+curl maple/db/gk   | bzcat | mysql gatekeeper
+```
 
 ### [Virtual boxes](http://virtualbox.org) with [Vagrant](http://vagrantup.com)
 
@@ -74,10 +87,8 @@ Before we start up our VM, we should talk a little about directory structure.  E
          /bacon           # This repository
          /stock           # Download your package of choice from http://honey-b/release_archive/ent/
 
-         /store           # Create an empty directory to have the Apache vhosts setup automatically
-         /internal        # If you already have clones, just move them to the correct place
-         /partners        # If the directories don't exist, you can always create them later and
-         /gatekeeper      # Just `vagrant provision` to have the vhosts setup
+         /gatekeeper      # If these exist, the appropriate vhost entries will be created
+         /internal        # If you create an empty directory, the code will be cloned from GitHub for you
 ```
 The reason for this, is when you run the Vagrant commands within the `bacon` folder, it's going to mount `..` as `/var/www/htdocs` within your virtual machine and setup Apache virtual hosts for each application we have defined.
 
@@ -103,7 +114,7 @@ Download a released version of SugarCRM from either the store or honey-b, unzip 
 Create a `cookbooks/dev-applications/attributes/local.rb` file, and add attributes to the `override` node.  These files are excluded from git, so make sure you backup any copies.  For example:
 ```
 override['dev']['database'] = {
-  'hostname' => 'my database ip',
+  'host' => 'my database ip',
   'username' => 'username',
   'password' => 'password'
 }

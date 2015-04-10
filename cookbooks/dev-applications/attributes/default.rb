@@ -1,5 +1,5 @@
 default['dev']['database'] = {
-  'hostname' => 'localhost',
+  'host' => '10.0.2.2',
   'username' => 'root',
   'password' => 'root'
 }
@@ -19,8 +19,6 @@ default['elasticsearch']['plugins'] = {
 # We don't want the composer running php::default as it will install php 5.3
 # and fail, because it conflicts with our installed php 5.4
 override['composer']['php_recipe'] = 'php::ini'
-
-include_attribute 'dev-applications::stock'
 
 if File.exists?('local.rb')
   include_attribute 'dev-applications::local'

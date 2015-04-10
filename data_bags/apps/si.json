@@ -2,6 +2,9 @@
   "id": "si",
   "repo": "git@github.com:sugarcrm/sugarinternal.git",
   "branch": "master",
+  "docroot": "",
+  "server_aliases": [
+  ],
   "packages": [
     "memcached",
     "libmemcached10",

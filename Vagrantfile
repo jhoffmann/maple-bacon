@@ -28,8 +28,8 @@ Vagrant.configure('2') do |config|
     node.hostmanager.aliases = [
       'si.' + PROJECT_NAME + '.vm',
       'stock.' + PROJECT_NAME + '.vm',
-      'store.' + PROJECT_NAME + '.vm',
       'internal.' + PROJECT_NAME + '.vm',
+      'store.' + PROJECT_NAME + '.vm',
       'partners.' + PROJECT_NAME + '.vm',
       'gatekeeper.' + PROJECT_NAME + '.vm',
     ]
@@ -48,11 +48,6 @@ Vagrant.configure('2') do |config|
     chef.cookbooks_path = 'cookbooks'
     chef.data_bags_path = 'data_bags'
 
-    # These enable ssh key forwarding from the host, so we can access
-    # our private git repos inside the VM
-    chef.add_recipe 'root_ssh_agent::ppid'
-    chef.add_recipe 'root_ssh_agent::env_keep'
-
     # Common setup tasks
     chef.add_recipe 'dev-common'
     chef.add_recipe 'dev-common::vhosts'
@@ -62,6 +57,7 @@ Vagrant.configure('2') do |config|
     # Application specific setup tasks
     chef.add_recipe 'dev-applications::stock'
     chef.add_recipe 'dev-applications::si'
+    chef.add_recipe 'dev-applications::gatekeeper'
 
     chef.json = {
       :app => {

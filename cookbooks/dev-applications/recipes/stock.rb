@@ -9,17 +9,18 @@ template "#{node['apache']['docroot_dir']}/stock/config_si.php" do
 end
 
 # Install the mysql server
-config = node['dev']['mysql-server']
-mysql_service 'default' do
-  version               config['version']
-  initial_root_password config['password']
-  socket                '/var/lib/mysql/mysql.sock'
-  action [:create, :start]
-end
+# config = node['dev']['mysql-server']
+# mysql_service 'default' do
+#   version               config['version']
+#   initial_root_password config['password']
+#   socket                '/var/lib/mysql/mysql.sock'
+#   action [:create, :start]
+# end
 
 # Use our custom config file tweaked for innodb performance
 mysql_config 'default' do
   source 'my.cnf.erb'
+  variables(:password => config['password'])
   notifies :restart, 'mysql_service[default]'
   action :create
 end
