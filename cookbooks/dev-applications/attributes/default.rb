@@ -1,5 +1,5 @@
 default['dev']['database'] = {
-  'host' => '10.0.2.2',
+  'host' => node['network']['default_gateway'],
   'username' => 'root',
   'password' => 'root'
 }

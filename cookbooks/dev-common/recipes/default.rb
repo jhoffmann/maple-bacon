@@ -51,3 +51,4 @@ php_pear 'APC' do
   action :install
   directives(:shm_size => '150M', :enable_cli => 0)
 end
+
