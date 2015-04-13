@@ -27,6 +27,8 @@ Vagrant.configure('2') do |config|
     node.vm.network :private_network, ip: IP_ADDRESS
     node.hostmanager.aliases = [
       'si.' + PROJECT_NAME + '.vm',
+      'www.' + PROJECT_NAME + '.vm',
+      'web.' + PROJECT_NAME + '.vm',
       'stock.' + PROJECT_NAME + '.vm',
       'internal.' + PROJECT_NAME + '.vm',
       'store.' + PROJECT_NAME + '.vm',

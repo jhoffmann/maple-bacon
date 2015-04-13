@@ -5,7 +5,9 @@
   "branch": "master",
   "server_aliases": [
     "store",
-    "partners"
+    "partners",
+    "web",
+    "www"
   ],
   "packages": [
     "php54-mcrypt",
